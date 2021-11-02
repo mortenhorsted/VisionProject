@@ -2,6 +2,7 @@ from CircleCalculations import areaOfCircle
 from CircleDetection import detectCircle, justDetectCircle
 from isolateIndicatorAndGlass import isolateIndicatorAndGlass
 from detectMeanRGB import calculateMeanRGB
+from detectMeanRGB import closest_color
 from plotRGBValues import plotRGBValues
 import numpy as np
 import cv2
@@ -107,57 +108,47 @@ import matplotlib.ticker as mtick
 
 
 ######### PLOTTING SEQUENCE
+
 meanR = np.zeros(21)
 meanG = np.zeros(21)
 meanB = np.zeros(21)
 
-imgNumber = 1
-while imgNumber < 22:
-    imageSightGlass = cv2.imread("Images/NumberedImages/" + str(imgNumber) + ".png")
+#imgNumber = 1
+#while imgNumber < 22:
+#    imageSightGlass = cv2.imread("Images/NumberedImages/" + str(imgNumber) + ".png")
+#    isolatedIndicator, isolatedGlass, rectangularIndicator = isolateIndicatorAndGlass(imageSightGlass)
+#    cv2.imwrite('Images/NumberedImages/Masks/MaskedIndicator' + str(imgNumber) + '.png', rectangularIndicator)
+#    meanR[imgNumber-1], meanG[imgNumber-1], meanB[imgNumber-1] = calculateMeanRGB(rectangularIndicator)
+#    print("Image number: " + str(imgNumber))
+#    closestColor = closest_color(meanR[imgNumber-1], meanG[imgNumber-1], meanB[imgNumber-1])
+#    yellowColorPercentage = closestColor[1]/(closestColor[0]+closestColor[1])
+#    print("Yellow color change percentage: " + str(yellowColorPercentage))
+#    imgNumber = imgNumber + 1
+
+#plotRGBValues(meanR, meanG, meanB, 21)
+
+###########################
+
+
+while __name__ == '__main__':
+    time.sleep(5)
+    imageSightGlass = cv2.imread("Images/TESTING/CurrentTestImage.png")
     isolatedIndicator, isolatedGlass, rectangularIndicator = isolateIndicatorAndGlass(imageSightGlass)
-    #cv2.imwrite('Images/NumberedImages/Masks/MaskedIndicator' + str(imgNumber) + '.png', isolatedIndicator)
-    meanR[imgNumber-1], meanG[imgNumber-1], meanB[imgNumber-1] = calculateMeanRGB(isolatedIndicator)
-    imgNumber = imgNumber + 1
-
-
-plotRGBValues(meanR, meanG, meanB, 21)
-#while __name__ == '__main__':
-#    time.sleep(2)
-
+    #cv2.imwrite('Images/NumberedImages/Masks/MaskedIndicator' + str(imgNumber) + '.png', rectangularIndicator)
+    meanR, meanG, meanB = calculateMeanRGB(rectangularIndicator)
+    #print("Image number: " + str(imgNumber))
+    closestColor = closest_color(meanR, meanG, meanB)
+    yellowColorPercentage = closestColor[1] / (closestColor[0] + closestColor[1])
+    print("Yellow color change percentage: " + str(yellowColorPercentage))
 
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 
-COLORS = (
-    (255, 221, 53),
-    (151, 169, 38)
-)
-
-
-def closest_color(r, g, b):
-    #r, g, b = rgb
-    color_diffs = []
-    for color in COLORS:
-        cr, cg, cb = color
-        color_diff = sqrt(abs(r - cr)**2 + abs(g - cg)**2 + abs(b - cb)**2)
-        print('Color difference: ' + str(color_diff))
-        color_diffs.append((color_diff, color))
-    return min(color_diffs)[1]
-
-
-imageSightGlass = cv2.imread("Images/NumberedImages/21.png")
-isolatedIndicator, isolatedGlass, rectangularIndicator = isolateIndicatorAndGlass(imageSightGlass)
-cv2.imshow('Isolated indicator', rectangularIndicator)
-cv2.imshow('Mask for indicator', isolatedGlass)
 
 
 
-mean = cv2.mean(rectangularIndicator)
-print("MEAN IS:")
-print(mean)
-print(mean[1])
 
 
 
