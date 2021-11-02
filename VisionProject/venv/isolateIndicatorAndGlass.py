@@ -53,7 +53,7 @@ def isolateIndicatorAndGlass(inputImage):
 
     maskedGlass = cv2.bitwise_and(inputImage, maskGlass)
     isolatedGlass = cv2.bitwise_and(maskedGlass, invertedIndicatorMask)
-
+    #cv2.imshow('Mask for glass', rectangularIndicator)
     #hsv = cv2.cvtColor(isolatedIndicator, cv2.COLOR_BGR2HSV)
     #lower = np.array([20, 60, 60])
     #upper = np.array([140, 255, 255])
@@ -62,7 +62,7 @@ def isolateIndicatorAndGlass(inputImage):
     #cv2.imshow('REduced mask indicator2', reducedMaskIndicator)
 
 
-    return isolatedIndicator, isolatedGlass, rectangularIndicator
+    return isolatedIndicator, isolatedGlass, rectangularIndicator, maskGlass
 
 
 

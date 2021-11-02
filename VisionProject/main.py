@@ -17,101 +17,14 @@ from matplotlib.pyplot import hsv
 import matplotlib.ticker as mtick
 
 
-#img = cv2.imread("Images/BubblySG.png")
-
-
-#x_inner, y_inner, r_inner = detectCircle(img, 70, 80)
-#x_outer, y_outer, r_outer = detectCircle(img, 90, 260)
-
-
-#cv2.imshow('Many circles', img)
-#img = cv2.imread("Images/BubblySG.png")
-
-#print('Radius of inner circle: ', r_inner)
-#print('Radius of outer circle: ', r_outer)
-#print('Area of inner circle: ', areaOfCircle(r_inner))
-#print('Area of outer circle: ', areaOfCircle(r_outer))
-#arealBetween = areaOfCircle(r_outer)-areaOfCircle(r_inner)
-#print('Area between the two circles: ', arealBetween)
-
-
-#####################################################
-# draw filled circle in white on black background as mask
-#mask = np.zeros_like(img)
-
-#maskIndicator = cv2.circle(mask, (x_inner,y_inner), r_inner, (255,255,255), -1)
-
-
-# apply mask to image
-#isolatedIndicator = cv2.bitwise_and(img, mask)
-
-
-
-
-### Calculate RGB values for indicator
-#image_bgr = cv2.imread('isolatedIndicator.png', cv2.IMREAD_COLOR)
-#channels = cv2.mean(image_bgr)
-#observation = np.array([(channels[2], channels[1], channels[0])])
-
-
-#current_Rval = 255*channels[2]/10
-#current_Gval = 255*channels[1]/10
-#current_Bval = 255*channels[0]/10
-
-#print(current_Rval, ', ', current_Gval, ', ', current_Bval)
-
-# Determine the color closest to the RGB measurement
-#TARGET_COLORS = {"Yellow (Pantone 108 U)": (255, 221, 53), "Green (Pantone 390 U)": (151, 169, 38), "Red": (255, 0, 0)}
-
-#def color_difference (color1, color2):
-#    return sum([abs(component1-component2) for component1, component2 in zip(color1, color2)])
-
-#my_color = (current_Rval, current_Gval, current_Bval)
-#differences = [[color_difference(my_color, target_value), target_name] for target_name, target_value in TARGET_COLORS.items()]
-#differences.sort()  # sorted by the first element of inner lists
-#my_color_name = differences[0][1]
-#print('The color is closest to: ', my_color_name)
-
-
-### Invert indicator mask
-#invertedIndicatorMask = cv2.bitwise_not(mask)
-
-#maskGlass = cv2.circle(mask, (x_outer,y_outer), r_outer, (255,255,255), -1)
-
-#maskedGlass = cv2.bitwise_and(img, maskGlass)
-#isolatedGlass = cv2.bitwise_and(maskedGlass, invertedIndicatorMask)
-
-
-# Show resulting images of isolated objects
-#cv2.imshow('Isolated glass', isolatedGlass)
-#cv2.imwrite('isolatedGlass.png', isolatedGlass)
-
-#######################################################################
-
-
-#nonBlackPixels = isolatedGlass.any(axis=-1).sum()
-#print(nonBlackPixels)
-
-#cv2.waitKey(0)
-#cv2.destroyAllWindows()
-
-
-
-######################## Looping functions
-
-
-
-#____________________________________
-#path = str(21)
-
 
 
 
 ######### PLOTTING SEQUENCE
 
-meanR = np.zeros(21)
-meanG = np.zeros(21)
-meanB = np.zeros(21)
+#meanR = np.zeros(21)
+#meanG = np.zeros(21)
+#meanB = np.zeros(21)
 
 #imgNumber = 1
 #while imgNumber < 22:
@@ -130,16 +43,40 @@ meanB = np.zeros(21)
 ###########################
 
 
-while __name__ == '__main__':
-    time.sleep(5)
-    imageSightGlass = cv2.imread("Images/TESTING/CurrentTestImage.png")
-    isolatedIndicator, isolatedGlass, rectangularIndicator = isolateIndicatorAndGlass(imageSightGlass)
-    #cv2.imwrite('Images/NumberedImages/Masks/MaskedIndicator' + str(imgNumber) + '.png', rectangularIndicator)
-    meanR, meanG, meanB = calculateMeanRGB(rectangularIndicator)
-    #print("Image number: " + str(imgNumber))
-    closestColor = closest_color(meanR, meanG, meanB)
-    yellowColorPercentage = closestColor[1] / (closestColor[0] + closestColor[1])
-    print("Yellow color change percentage: " + str(yellowColorPercentage))
+isolatedGlassReference = cv2.imread("Images/TESTING/CurrentTestImage.png")
+Bubbles0 = cv2.imread("Images/Bubbles/0Bubble.png")
+isolatedIndicator, isolatedGlass, rectangularIndicator, maskGlass = isolateIndicatorAndGlass(isolatedGlassReference)
+Bubbles1 = cv2.imread("Images/Bubbles/5Bubble.png")
+
+cv2.imshow('Mask for glass', maskGlass)
+
+differenceSum = np.sum(Bubbles0 != Bubbles1)
+print(differenceSum)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+######################
+#while __name__ == '__main__':
+#    time.sleep(50)
+#    imageSightGlass = cv2.imread("Images/TESTING/CurrentTestImage.png")
+#    isolatedIndicator, isolatedGlass, rectangularIndicator, maskGlass = isolateIndicatorAndGlass(imageSightGlass)
+#    #cv2.imwrite('Images/NumberedImages/Masks/MaskedIndicator' + str(imgNumber) + '.png', rectangularIndicator)
+#    meanR, meanG, meanB = calculateMeanRGB(rectangularIndicator)
+#    #print("Image number: " + str(imgNumber))
+#    closestColor = closest_color(meanR, meanG, meanB)
+#    yellowColorPercentage = closestColor[1] / (closestColor[0] + closestColor[1])
+#    print("Moisture percentage: " + str(yellowColorPercentage))
 
 
 cv2.waitKey(0)
