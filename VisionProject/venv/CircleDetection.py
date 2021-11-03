@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 def detectCircle(image, minRadius, maxRadius):
     minDist = 100
     param1 = 35  ##30## 500
-    param2 = 70  ##50## 200 #smaller value-> more false circles
+    param2 = 65  ##50## 200 #smaller value-> more false circles
     # minRadius = 5
     # maxRadius = 170 #10
 

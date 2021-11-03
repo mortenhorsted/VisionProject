@@ -16,8 +16,8 @@ def isolateIndicatorAndGlass(inputImage):
 
 
     tempImage = inputImage.copy()
-    x_inner, y_inner, r_inner = detectCircle(tempImage, 5, 90)
-    x_outer, y_outer, r_outer = detectCircle(tempImage, 60, 210)
+    x_inner, y_inner, r_inner = detectCircle(tempImage, 78, 110)
+    x_outer, y_outer, r_outer = detectCircle(tempImage, 120, 210)
     # draw filled circle in white on black background as mask
     mask = np.zeros_like(inputImage)
 

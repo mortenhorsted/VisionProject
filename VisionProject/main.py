@@ -16,6 +16,9 @@ from matplotlib import pyplot as plt
 from matplotlib.pyplot import hsv
 import matplotlib.ticker as mtick
 
+from proofOfConcept import showProofOfConcept
+
+showProofOfConcept()
 
 
 
@@ -43,62 +46,24 @@ import matplotlib.ticker as mtick
 ###########################
 
 
-isolatedGlassReference = cv2.imread("Images/TESTING/CurrentTestImage.png")
+#isolatedGlassReference = cv2.imread("Images/TESTING/CurrentTestImage.png")
 
-isolatedIndicator, isolatedGlass, rectangularIndicator, maxDifferenceMask = isolateIndicatorAndGlass(isolatedGlassReference)
-referenceImageNoBubbles = isolatedGlass.copy()
+#isolatedIndicator, isolatedGlass, rectangularIndicator, maxDifferenceMask = isolateIndicatorAndGlass(isolatedGlassReference)
+#referenceImageNoBubbles = isolatedGlass.copy()
 #cv2.imwrite("Images/Bubbles/IsolatedGlassNoBubbles.png", isolatedGlass)
-Bubbles1 = cv2.imread("Images/Bubbles/1Bubble.png")
-Bubbles2 = cv2.imread("Images/Bubbles/2Bubble.png")
-Bubbles3 = cv2.imread("Images/Bubbles/3Bubble.png")
-Bubbles4 = cv2.imread("Images/Bubbles/4Bubble.png")
-Bubbles5 = cv2.imread("Images/Bubbles/5Bubble.png")
-Bubbles6 = cv2.imread("Images/Bubbles/5BubbleX.png")
-Bubbles7 = cv2.imread("Images/Bubbles/6Bubble.png")
-Bubbles8 = cv2.imread("Images/Bubbles/6BubbleX.png")
-Bubbles30pct = cv2.imread("Images/Bubbles/BubblySG.png")
-
-cv2.imshow("Reference image, no bubbles", referenceImageNoBubbles)
-cv2.imshow("Maximum difference mask", maxDifferenceMask)
-cv2.imshow("5 bubbles", Bubbles5)
-cv2.imshow("30 pct bubbles", Bubbles30pct)
 
 
-maximumDifference = np.sum(referenceImageNoBubbles != maxDifferenceMask)
-print("Maximum difference is: " + str(maximumDifference))
 
-#cv2.imshow("MaxDiff Mask", maxDifferenceMask)
-#cv2.imshow("ReferenceImg No bubbles", referenceImageNoBubbles)
+#maximumDifference = np.sum(referenceImageNoBubbles != maxDifferenceMask)
+#print("Maximum difference is: " + str(maximumDifference))
 
 
-diffBubbles1 = np.sum(referenceImageNoBubbles != Bubbles1)
-print("Bubbles1 - difference is: " + str(diffBubbles1))
-print("Bubbles1 - difference in percent is: " + str(diffBubbles1/maximumDifference) + "%")
-
-diffBubbles2 = np.sum(referenceImageNoBubbles != Bubbles2)
-print("Bubbles2 - difference is: " + str(diffBubbles2))
-print("Bubbles2 - difference in percent is: " + str(diffBubbles2/maximumDifference) + "%")
-
-diffBubbles3 = np.sum(referenceImageNoBubbles != Bubbles3)
-print("Bubbles3 - difference is: " + str(diffBubbles3))
-print("Bubbles3 - difference in percent is: " + str(diffBubbles3/maximumDifference) + "%")
-
-diffBubbles4 = np.sum(referenceImageNoBubbles != Bubbles4)
-print("Bubbles4 - difference is: " + str(diffBubbles4))
-print("Bubbles4 - difference in percent is: " + str(diffBubbles4/maximumDifference) + "%")
-
-diffBubbles5 = np.sum(referenceImageNoBubbles != Bubbles5)
-print("Bubbles5 - difference is: " + str(diffBubbles5))
-print("Bubbles5 - difference in percent is: " + str(diffBubbles5/maximumDifference) + "%")
 
 
-diffBubbles6 = np.sum(referenceImageNoBubbles != Bubbles7)
-print("Bubbles6 - difference is: " + str(diffBubbles6))
-print("Bubbles6 - difference in percent is: " + str(diffBubbles6/maximumDifference) + "%")
 
-diffBubbles30pct = np.sum(referenceImageNoBubbles != Bubbles30pct)
-print("Bubbles 30 pct - difference is: " + str(diffBubbles30pct))
-print("Bubbles 30 pct - difference in percent is: " + str(diffBubbles30pct/maximumDifference) + "%")
+#diffBubbles30pct = np.sum(referenceImageNoBubbles != Bubbles30pct)
+#print("Bubbles 30 pct - difference is: " + str(diffBubbles30pct))
+#print("Bubbles 30 pct - difference in percent is: " + str(diffBubbles30pct/maximumDifference) + "%")
 
 
 
