@@ -13,20 +13,23 @@ The method for detecting the moisture level is by extracting a rectangular image
 The method for detecting vapor bubbles in the liquid line is performed by comparing the captured image to a reference image containing no vapor bubbles. Additionally, the captured image is also compared to the most recent captured image, in order to provide stability due to light fluctuations.
 Each of the reference and recent images are compared to the captured image with a threshold, in order to determine the pixels that have achieved a certain degree of variance. Afterwards, these are dilated to provide a more accurate quantification of the size of the bubbles, as the threshold leads to the edges of the bubbles not being detected.
 
-####List here
+#### The following parameters within the code is to be manipulated, in order to obtain the desired results as well as for stability
 
-* Item1
-* Item2
-* blablalba
+* Hough circles, parameter 2: This setting is adjusting the accuracy of the circle detection. If the circles can not be detected, this value can be decreased. If an incorrect circle is detected, it can be increased. 
+* Hough circles, minimum and maximum radius. A minimum and maximum radius is defined for both the inner and outer circle (indicator and glass frame separation). The min/max radius for each circle is to be manipulated for detecting the correct circle, which fluctuates according to the distance between the camera and sight glass, as well as the image resolution.
+* Image comparison, threshold. This setting is adjusting the threshold for when a variance in a pixel is detected. With no threshold, minor changes in light can be observed as a variance. This threshold should be low enough to detect the bubbles as a variance upon occurance, but high enough to not detect minor fluctuations as a variance.
+* Image comparison, dilation. 
+
+
 ____________________________________________________
 
 ## Machine learning approach
 
 
-#### Mask RCNN
+### Mask RCNN
 
 
-#### CNN
+### CNN
 
 
 
@@ -34,6 +37,28 @@ ____________________________________________________
 
 
 ____________________________________________________
+
+## Dependencies for each solution
+
+### Classical approach
+
+* Python 3.56
+* tensor
+* pip
+
+### Mask RCNN
+
+* Python 3.56
+* tensor
+* pip
+
+### CNN
+
+* Python 3.56
+* tensor
+* pip
+
+
 
 
 The project is divided into three subprojects, one for each use case.
