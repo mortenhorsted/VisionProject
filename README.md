@@ -13,7 +13,11 @@ The method for detecting the moisture level is by extracting a rectangular image
 The method for detecting vapor bubbles in the liquid line is performed by comparing the captured image to a reference image containing no vapor bubbles. Additionally, the captured image is also compared to the most recent captured image, in order to provide stability due to light fluctuations.
 Each of the reference and recent images are compared to the captured image with a threshold, in order to determine the pixels that have achieved a certain degree of variance. Afterwards, these are dilated to provide a more accurate quantification of the size of the bubbles, as the threshold leads to the edges of the bubbles not being detected.
 
+####List here
 
+* Item1
+* Item2
+* blablalba
 ____________________________________________________
 
 ## Machine learning approach
