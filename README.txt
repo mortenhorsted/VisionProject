@@ -3,7 +3,7 @@ There are two different approaches for solving the problem, which is by classica
 
 ____________________________________________________
 
-**Classical approach**
+<h1> **Classical approach** </h1>
 
 The classical approach is utilizing sequential manipulation of the images to obtain an isolated image of each region of interest, which is the glass frame of the sight glass as well as the indicator.
 
