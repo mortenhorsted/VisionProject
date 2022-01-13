@@ -1,15 +1,3 @@
-<component name="InspectionProjectProfileManager">
-  <profile version="1.0">
-    <option name="myName" value="Project Default" />
-    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="ignoredPackages">
-        <value>
-          <list size="2">
-            <item index="0" class="java.lang.String" itemvalue="tensorflow" />
-            <item index="1" class="java.lang.String" itemvalue="h5py" />
-          </list>
-        </value>
-      </option>
-    </inspection_tool>
-  </profile>
-</component>
+version https://git-lfs.github.com/spec/v1
+oid sha256:b26c738becac702c9ce505a4416c354b1126f20d3ab6ca47bc63c7effb0c595d
+size 594
