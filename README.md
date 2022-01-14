@@ -4,9 +4,9 @@ This GitHub repository is containing the designed solutions for the bachelor the
 There are two different approaches for solving the problem, which is by classical image processing and machine learning.
 Both solutions are able to determine the moisture level and detect the presence of vapor bubbles in the liquid line.
 
-In case further explanations or material is needed, the three authors of the report can be contacted by the information below:
+In case further explanations or material is desired, feel free to contact any of the three authors of the report by the information below.
 
-First Header | Second Header
+Name | E-mail address
 ------------ | -------------
 Morten Horsted Kristensen | morten-hk@hotmail.com
 Dominic Okumu Vuga | dominicvuga@live.dk
