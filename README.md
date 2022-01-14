@@ -51,10 +51,19 @@ Besides the plotting, the detected amount of vapor bubbles is also exported as a
 ____________________________________________________
 
 ## Machine learning approach
-
+The machine learning approach use a large sample of images from a given circumstance to train a model that is able to predict similar event in the future.
+There are two types of machine learning that have been used to solve the problem which are Mask RCNN and CNN. Both type of algorithm requires a very amount of data to train on, it is recommended a data size of at least 300 images.
+The can work less, but it will reduce the accuracy of the prediction.
 
 ### Mask RCNN
+The Mask RCNN is an algorithm that contains object detection, segmentation and masking of the detected object. This has been used for moisture detection by detecting the indicator of the sight glass and lay mask on top. The color of the indicator will later be calculated from the RGB value of the detected object to determined if the sight glass is moisture or not.
 
+#### Object annotation
+Object annotation is required for training the model. The annotation is done with 'labelme' where they are labeled one by one. The first annotation is for the indicator, the second is the class around the indicator and the third is bubbles. 
+It is important to be precise when annotating in order for the trained model to make the most accurate object segmentation. After the annotation is done it is seperated into two sets training and validation. 80% of the annotated images are saved in the training folder and 20% are saved in the validation folder. 
+#### Model training
+
+### Image prediction
 
 ### CNN
 
