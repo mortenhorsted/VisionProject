@@ -5,8 +5,11 @@ There are two different approaches for solving the problem, which is by classica
 Both solutions are able to determine the moisture level and detect the presence of vapor bubbles in the liquid line.
 
 In case further explanations or material is needed, the three authors of the report can be contacted by the information below:
+
 Morten Horsted Kristensen     morten-hk@hotmail.com
+
 Dominic Okumu Vuga            dominicvuga@live.dk
+
 Jageesh Sivasothy             XXXXXXX
 ____________________________________________________
 
