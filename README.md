@@ -6,11 +6,13 @@ Both solutions are able to determine the moisture level and detect the presence 
 
 In case further explanations or material is needed, the three authors of the report can be contacted by the information below:
 
-Morten Horsted Kristensen            morten-hk@hotmail.com
+First Header | Second Header
+------------ | -------------
+Morten Horsted Kristensen | morten-hk@hotmail.com
+Dominic Okumu Vuga | dominicvuga@live.dk
+Jageesh Sivasothy | XXXXXX
 
-Dominic Okumu Vuga                   dominicvuga@live.dk
 
-Jageesh Sivasothy                    XXXXXXX
 ____________________________________________________
 
 ## Classical approach
