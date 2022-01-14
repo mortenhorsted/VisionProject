@@ -1,8 +1,13 @@
-There are two different approaches for solving the problem, which is by classical image processing and machine learning.
+This GitHub repository is containing the designed solutions for the bachelor thesis "Vision-based refrigerant quality detection" in collaboration with Danfoss. The purpose is to design a solution that is able to monitor a sight glass within a refrigeration system, to detect the moisture level as well as the presence of vapor bubbles in the liquid line. 
 
+
+There are two different approaches for solving the problem, which is by classical image processing and machine learning.
 Both solutions are able to determine the moisture level and detect the presence of vapor bubbles in the liquid line.
 
-
+In case further explanations or material is needed, the three authors of the report can be contacted by the information below:
+Morten Horsted Kristensen     morten-hk@hotmail.com
+Dominic Okumu Vuga            dominicvuga@live.dk
+Jageesh Sivasothy             XXXXXXX
 ____________________________________________________
 
 ## Classical approach
