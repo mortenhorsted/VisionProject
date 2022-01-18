@@ -75,7 +75,7 @@ Image prediction is done by loading a pretrained model and use it to detect obje
 ### CNN
 The CNN is an alternative for the Mask R-CNN. It does not require annotation and it does only train on labeled images. The labeling of the images does heavily on the folder structure.  
 ### Folder structure
-The folder structure for moisture detection and bubble detection are the same and they are as following:
+The folder structure for moisture detection and bubble detection are the same, and they are as following:
 * main folder
   * indicator
     * training
@@ -92,10 +92,17 @@ The folder structure for moisture detection and bubble detection are the same an
     * validation
       * Bubbles
       * NoBubbles
-    * test
-### Training
-The training of the moisture detection is 
+    * test 
 
+As for the moisture detection sight glass images with green indicator are stored in the DRY folder in the training and validation folder. In the WET folder sight glass images with yellow indicator are stored in the training folder and validation folder.
+The bubble detection is similar where sight glass images where bubbles are visible through the glass are stored in the folder called Bubbles in training and validation folder. The images with no bubbles are store in the folder called NoBubbles in training and validation.
+
+### Training
+The training of the two cases are done separately where the training for moisture detection is done in "trainIndicatorModel.py" and the training for bubble detection is done in "trainBubbleModel.py" 
+The trained models are saved in a folder called pretrained model.
+### Apply the model 
+Testing images are saved in the test folder which includes a mixture of images of moisturized and non moisturized, with bubbles and without bubbles. The models should be able to categorize the images by itself.
+This is done by running "main.py" where the pretrained model is used to detected moisture and bubbles in the images.
 
 
 
@@ -132,16 +139,27 @@ The version of Python that has been used during the implementation, as well as t
 * wheel			0.36.2	
 
 ### Mask RCNN
-
-* Python 3.56
-* tensor
-* pip
-
+* h5py  2.10.0
+* imgaug  0.4.0
+* keras  2.7.0
+* labelme  4.6.0
+* matplotlib  3.2.2
+* numpy  1.19.5
+* opencv-python  4.5.4.60
+* pillow  8.4.0
+* pip  21.2.4
+* pixellib  0.7.1
+* python  3.7.11
+* scikit-image  0.18.3
+* scipy  1.7.2
+* tensorflow  2.4.2
 ### CNN
 
-* Python 3.56
-* tensor
+* python  3.7.11
+* tensorflow  2.4.2
 * pip
+* matplotlib  3.2.2
+* numpy  1.19.5
 
 
 
