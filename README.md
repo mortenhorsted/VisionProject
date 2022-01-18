@@ -60,14 +60,41 @@ The Mask RCNN is an algorithm that contains object detection, segmentation and m
 
 #### Object annotation
 Object annotation is required for training the model. The annotation is done with 'labelme' where they are labeled one by one. The first annotation is for the indicator, the second is the class around the indicator and the third is bubbles. 
-It is important to be precise when annotating in order for the trained model to make the most accurate object segmentation. After the annotation is done it is seperated into two sets training and validation. 80% of the annotated images are saved in the training folder and 20% are saved in the validation folder. 
+It is important to be precise when annotating in order for the trained model to make the most accurate object segmentation. After the annotation is done, it is saved in a jason format and seperated into two sets training and validation. 80% of the annotated images are saved in the training folder and 20% are saved in the validation folder. 
 #### Model training
-
-### Image prediction
-
+The training is done in google colab where the annotated dataset is uploaded as a zip file. Hereafter the following steps are taken: 
+* Unzip the dataset 
+* Download a pretrained model 'mask_rcnn_coco.h5' 
+* Install pixellib 
+* Visualize the images before training 
+* Training settings and run training 
+* Evaluate the training 
+* Save models
+#### Image prediction
+Image prediction is done by loading a pretrained model and use it to detect object from a new sight glass image. The detected object are extracted and saved locally. The indicator image is loaded and cropped to calculate the RGB values. 
 ### CNN
-
-
+The CNN is an alternative for the Mask R-CNN. It does not require annotation and it does only train on labeled images. The labeling of the images does heavily on the folder structure.  
+### Folder structure
+The folder structure for moisture detection and bubble detection are the same and they are as following:
+* main folder
+  * indicator
+    * training
+      * DRY
+      * WET
+    * validation
+      * DRY
+      * WET
+    * test
+  * bubbles
+    * training
+      * Bubbles
+      * NoBubbles
+    * validation
+      * Bubbles
+      * NoBubbles
+    * test
+### Training
+The training of the moisture detection is 
 
 
 
