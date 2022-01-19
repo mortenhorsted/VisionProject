@@ -9,8 +9,8 @@ In case of any questions, of if further explanations or material is desired, fee
 Name | E-mail address
 ------------ | -------------
 Morten Horsted Kristensen | morten-hk@hotmail.com
-Dominic Okumu Vuga | dominicvuga@live.dk
-Jageesh Sivasothy | XXXXXX
+Dominic Okumu Vuga | dominicvuga@gmail.com
+Jageesh Sivasothy | jageesh2012@live.dk
 
 
 ____________________________________________________
